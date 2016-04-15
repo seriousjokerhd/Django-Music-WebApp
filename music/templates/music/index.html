@@ -1,0 +1,29 @@
+{% for album in albums %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    	<link rel="stylesheet" type="text/css" href="" />
+
+    </head>
+
+    <body>
+    <section class="section chart-grid">
+        <div class="section-content">
+            <ul>
+
+                <li><strong>{{ album.id }}.</strong><a
+                        href="{%  url 'music:detail' album.id %}"><img
+                        src="{{ album.album_art }}"
+                        width="100" height="100" alt="{{ album.album_title }}"></a>
+                    <h3>
+                        <a href="{%  url 'music:detail' album.id %}">{{ album.album_title }}</a></h3><h4><a
+                            href="#">{{ album.artist }}</a></h4></li>
+
+            </ul>
+        </div>
+    </section>
+
+{% endfor %}
+
